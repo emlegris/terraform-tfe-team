@@ -1,0 +1,9 @@
+---
+name: Code Analysis
+
+on:
+  pull_request:
+
+jobs:
+  terraform:
+    uses: 'emlegris/terraform-modules-ci/.github/workflows/security.yaml@main'
