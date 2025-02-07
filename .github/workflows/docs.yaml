@@ -4,6 +4,9 @@ name: Readme
 on:
   pull_request:
 
+permissions:
+  contents: write
+
 jobs:
   terraform:
     uses: 'emlegris/terraform-modules-ci/.github/workflows/docs.yaml@main'
