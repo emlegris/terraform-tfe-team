@@ -73,12 +73,12 @@ variable "token" {
 
 variable "token_expired_at" {
   type        = string
-  description = "(Optional) If set to true, a new token will be generated even if a token already exists. This will invalidate the existing token!"
+  description = "(Optional) The token's expiration date. The expiration date must be a date/time string in RFC3339 format (e.g., '2024-12-31T23:59:59Z'). If no expiration date is supplied, the expiration date will default to null and never expire."
   default     = null
 }
 
 variable "token_force_regenerate" {
-  description = "(Optional) The token's expiration date. The expiration date must be a date/time string in RFC3339 format (e.g., '2024-12-31T23:59:59Z'). If no expiration date is supplied, the expiration date will default to null and never expire."
+  description = "(Optional) If set to true, a new token will be generated even if a token already exists. This will invalidate the existing token!"
   default     = false
 }
 

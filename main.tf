@@ -27,16 +27,11 @@ resource "tfe_team" "this" {
   }
 }
 
-resource "time_rotating" "token" {
-  count         = var.token && var.token_expired_at == null ? 1 : 0
-  rotation_days = 30
-}
-
 resource "tfe_team_token" "this" {
   count            = var.token ? 1 : 0
   team_id          = tfe_team.this.id
   force_regenerate = var.token_force_regenerate
-  expired_at       = var.token_expired_at != null ? var.token_expired_at : time_rotating.token[0].rotation_rfc3339
+  expired_at       = var.token_expired_at
 }
 
 resource "tfe_team_members" "this" {
