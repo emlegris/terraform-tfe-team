@@ -1,0 +1,13 @@
+---
+name: Readme
+
+on:
+  pull_request:
+
+jobs:
+  terraform:
+    uses: 'emlegris/terraform-modules-ci/.github/workflows/docs.yaml@main'
+    with:
+        output-file: README.md
+        output-method: replace
+        git-push: true
